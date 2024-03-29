@@ -1,0 +1,45 @@
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
+    <title>Prebo top</title>
+  </head>
+
+
+  <body>
+    <!--   ヘッダーここから    -->
+    <%= render 'header' %>
+    <!--   ヘッダーここまで    -->
+    <div class="main">
+      <!-- プレゼントボックスの表示 -->
+      <div class="box">
+        <!-- ボックス１ -->
+        <div class="box-info">
+          <div class="image_circle"></div>
+          <p class="box-name">藤井さん</p>
+        </div>
+        <!-- ボックス２ -->
+        <div class="box-info">
+          <div class="image_circle"></div>
+          <p class="box-name">ティファちゃん</p>
+        </div>
+
+        <%= image_tag "add_box.png", class: "add-box-button" %>
+
+      </div>
+      <hr>
+    <%= render 'post',hoge: @hoge %>
+
+    <a class="purchase-btn" href="/items/new">
+      <span class="purchase-btn-text">キロク</span>
+      <span class="purchase-btn-text-small">する</span>
+      <%= image_tag "shiro.png", class:"purchase-btn-icon" %>
+    </a>
+
+  </body>
+
+  <footer>
+    <img src="images/イラスト8.png" class="fotter-logo">
+  </footer>
