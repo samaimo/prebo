@@ -3,9 +3,13 @@
       <div class="header-wrapper">
         <ul class="user-menu">
           <!-- ログアウト状態の表示 -->
-          <li class="login">ログイン</li>
-          <li class="sign_up">新規登録</li>
-          <!-- ログアウト状態の表示 -->
+          <% if user_signed_in? %>
+            <li><%= link_to current_user.nickname, "#", class: "user-nickname" %></li>
+            <li><%= link_to 'ログアウト', destroy_user_session_path , data: {turbo_method: :delete}, class: "logout" %></li>
+          <% else %>
+            <li><%= link_to 'ログイン', new_user_session_path, class: "login" %></li>
+            <li><%= link_to '新規登録', new_user_registration_path, class: "sign-up" %></li>
+          <% end %>
         </ul>
       </div>
     </div>
