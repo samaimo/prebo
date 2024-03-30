@@ -1,30 +1,3 @@
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end; /* 要素を下寄せにする */
-  top: 0;
-  position: sticky;
-  height: 90px;
-  background-color: rgb(255, 255, 255);
-  color: rgb(82, 92, 101);
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px;
-  z-index: 1000;
-  width: 100%;
-  padding: 0 20%;
-}
-
-.logo {
-  height: 50px;
-  margin: 0 0 10 50px;
-}
-
-.header-wrapper {
-  display: flex;
-  align-items: flex-end; /* 要素を下寄せにする */
-  flex-direction: column; /* 縦並びにする */
-  margin-right: 10px;
-}
-
 
 /* ログイン情報・新規登録ボタン */
 .user-menu {
@@ -44,8 +17,9 @@
 }
 
 .add-box-button {
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
+  align-self: flex-end;
 }
 
 /* メイン */
@@ -92,23 +66,25 @@ div.box {
 }
 
 div.box-info {
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  height: 90px;
+  justify-content: center;
+  height: 100px;
   width: 90px;
   margin-right: 20px;
 }
 
-.box-name {
-  text-align: center; /* テキストを中央揃え */
+p.box-name {
   font-size: 12px;
+  text-align: center;
 }
 
-.image_circle {
+div.image_circle {
   background-color: #ff751f;
   width: 80px;
   height: 80px;
   border-radius: 50%;
-  /* background-image: url(images/藤井.png); */
   background-position: center;
   background-size: cover; /* 背景画像を領域に合わせて拡大縮小 */
 }
