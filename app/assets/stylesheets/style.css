@@ -92,17 +92,17 @@ div.image_circle {
 hr {
   border: none;
   border-bottom: 1px solid #9e9e9e;
-  margin: 20px auto; /* 上下のマージンを20pxに設定し、左右のマージンを自動で調整 */
-  width: 95%;
+  margin: 20px auto; 上下のマージンを20pxに設定し、左右のマージンを自動で調整
+  width: auto;
   padding: 0 250px; /* パディング */
 }
 
-footter {
+footer {
   display: flex;
   justify-content: center;
 }
 
-.fotter-logo {
+.footer-logo {
   height:500px;
   background-size: cover; /* 背景画像を領域に合わせて拡大縮小 */
 }
@@ -122,11 +122,11 @@ footter {
   padding: 10px;
 }
 
+/* アイコン画像用 */
 .prof-image {
-  width: 150px;
-  height: 150px;
+  width: 200px;
+  height: 200px;
   border-radius: 50%;
-  /* background-image: url(images/藤井.png); */
   background-position: center;
   background-size: cover; /* 背景画像を領域に合わせて拡大縮小 */
 }
@@ -147,9 +147,16 @@ p.box-memo {
 }
 
 
-a {
-  text-decoration: none;
+a:link,
+a:visited,
+a:hover,
+a:active {
+  color: inherit; /* リンクの色を継承する */
+  text-decoration: none; /* 下線をなくす */
 }
+
+
+
 * {
   box-sizing: border-box;
 }

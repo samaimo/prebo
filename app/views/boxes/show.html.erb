@@ -1,0 +1,46 @@
+<!--   ヘッダー    -->
+  <%= render 'header' %>
+
+  <!--メイン-->
+  <div class="main">
+    <!--編集と削除ボタン-->
+    <div class="prof-top">
+      <div class="ed-button">
+        <%= link_to edit_box_path(@box.id) do %>
+          Preboを編集
+        <% end %>
+      </div>
+      <div class="ed-button">
+        <%= link_to "削除する", box_path , data: {turbo_method: :delete}, class:"box-destroy" %>
+      </div>
+    </div>
+
+    <div class="prof-main">
+      <!--アイコン画像表示-->
+      <div class="prof-image" style="background-image: url('<%= url_for(@box.image) %>');"></div>
+      <!--プロフィール表示-->
+      <div class="prof-box">
+        <!--ボックス名-->
+        <div class="box-name">
+          <%= @box.box_name %>
+        </div>
+        <!--プロフ項目-->
+        <ul class="box-text">
+          <li>お誕生日 <%= @hoge %></li>
+          <li>記念日</li>
+          <li>所属・職業・特徴</li>
+          <li>趣味・特技</li>
+          <li>好きなもの</li>
+          <li>苦手なもの</li>
+        </ul>
+      </div>
+
+      <!--投稿一覧表示-->
+
+    </div>
+
+  </div>
+
+ 
+  <!--フッター-->
+  <%= render 'footer' %>
