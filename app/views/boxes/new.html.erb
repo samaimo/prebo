@@ -29,8 +29,9 @@
         <p>
           クリックしてファイルをアップロード
         </p>
-        <%= f.file_field :image, id:"item-image" %>
+        <%= f.file_field :image, id:"box-image" %>
       </div>
+      <div id="previews"></div>
     </div>
     <%# /プロフィール画像 %>
 
@@ -40,5 +41,5 @@
 </div>
 <% end %>
 
-<%= render "shared/second-footer"%>
+<%= render "shared/footer"%>
 

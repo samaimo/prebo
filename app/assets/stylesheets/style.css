@@ -1,4 +1,26 @@
 
+
+/* メイン */
+.main {
+  background-color: rgb(255, 229, 249);
+  height: auto;
+  padding: 50px 20%;
+}
+
+.footer {
+  width: 100vw;
+  height: auto;
+  background-color: #FFFFFF;
+  display: flex;
+  justify-content: center;
+  margin: 40px;
+}
+
+.footer-logo {
+  height: 50px;
+  background-size: cover; /* 背景画像を領域に合わせて拡大縮小 */
+}
+
 /* ログイン情報・新規登録ボタン */
 .user-menu {
   list-style: none;
@@ -22,12 +44,7 @@
   align-self: flex-end;
 }
 
-/* メイン */
-.main {
-  background-color: rgb(251, 252, 255);
-  height: 100%;
-  padding: 50px 20%;
-}
+
 
 .post-wrapper {
   display: flex;
@@ -97,15 +114,6 @@ hr {
   padding: 0 250px; /* パディング */
 }
 
-footer {
-  display: flex;
-  justify-content: center;
-}
-
-.footer-logo {
-  height:500px;
-  background-size: cover; /* 背景画像を領域に合わせて拡大縮小 */
-}
 
 /* プレボ詳細ページ */
 .prebo-box {
@@ -155,6 +163,9 @@ a:active {
   text-decoration: none; /* 下線をなくす */
 }
 
+li. {
+  list-style: none;
+}
 
 
 * {

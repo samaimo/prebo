@@ -25,9 +25,9 @@
           <%= @box.box_name %>
         </div>
         <!--プロフ項目-->
-        <ul class="box-text">
-          <li>お誕生日 <%= @hoge %></li>
-          <li>記念日</li>
+        <ul class="prof-text">
+          <li>お誕生日 <%= @box.birth_day.strftime("%Y年 %-m月 %-d日") if @box.birth_day.present? %></li>
+          <li>記念日 <%= @box.anniversary_day.strftime("%Y年 %-m月 %-d日") if @box.anniversary_day.present? %></li>
           <li>所属・職業・特徴</li>
           <li>趣味・特技</li>
           <li>好きなもの</li>
@@ -43,4 +43,4 @@
 
  
   <!--フッター-->
-  <%= render 'footer' %>
+  <%= render 'shared/footer' %>

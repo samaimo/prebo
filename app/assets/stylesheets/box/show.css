@@ -1,11 +1,3 @@
-
-.prof-top {
-  width: 100%;
-  height: 50px;
-  display: flex;
-  justify-content: right;
-}
-
 /* 編集・削除ボタン */
 .ed-button {
   display: flex;
@@ -22,22 +14,38 @@
   margin-left: 10px;
 }
 
+/* prof-mainクラスにflex-direction: column;を追加 */
 .prof-main {
   display: flex;
+  flex-direction: column; /* 追加 */
 }
+
+/* 編集・削除ボタンのボックス */
+.prof-top {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  justify-content: flex-end; /* 右寄せに修正 */
+  margin-bottom: 20px; /* スペースを追加 */
+}
+
 
 .prof-box {
-  margin-left: 40px;
-  line-height: 30px;
+  padding:  80px;
+  min-height: 100vh;
+  background-color: #FFFFFF;
+  
 }
 
-/* ボックス名 */
+/* ボックス名称 */
 div.box-name {
   font-size: 20px;
   font-weight: bold;
+  margin-bottom: 10px;
 }
 
 /* プロフィール本文 */
-.box-text {
+.prof-text {
   font-size: 14px;
+  line-height: 50px;
 }
