@@ -1,6 +1,6 @@
 class BoxesController < ApplicationController
-  before_action :set_box, only: [:edit, :show, :destroy]
-  before_action :move_to_index, except: [:index, :show,:destroy]
+  before_action :set_box, only: [:edit, :show, :update, :destroy]
+  before_action :move_to_index, except: [:index, :update, :show,:destroy]
 
   def index
     @boxes = Box.includes(:user).order('created_at DESC')
@@ -29,6 +29,15 @@ class BoxesController < ApplicationController
   def edit
   end
 
+  def update
+    if @box.update(box_params)
+      redirect_to box_path
+    else
+      render :edit, status: :unprocessable_entity
+    end
+  end
+
+
   def destroy
     if @box.user == current_user
       @box.destroy
@@ -37,9 +46,12 @@ class BoxesController < ApplicationController
   end
 
 
+
   private
   def box_params
-    params.require(:box).permit(:box_name,
+    params.require(:box).permit(:box_name, :"birth_day(1i)", :"birth_day(2i)", :"birth_day(3i)",
+                                :"anniversary_day(1i)", :"anniversary_day(2i)", :"anniversary_day(3i)",
+                                :occupation,:hobbies,:likes,:dislikes,
                                  :image).merge(user_id: current_user.id)
   end
 
