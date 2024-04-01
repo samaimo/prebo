@@ -41,10 +41,11 @@ ActiveRecord::Schema[7.0].define(version: 2024_03_30_025724) do
 
   create_table "boxes", charset: "utf8", force: :cascade do |t|
     t.string "box_name", null: false
-    t.date "birthday"
+    t.date "birth_day"
     t.text "memo"
     t.string "favorite_color"
-    t.date "anniversary"
+    t.date "anniversary_day"
+    t.text "anniversary_memo"
     t.string "occupation"
     t.string "hobbies"
     t.string "likes"
