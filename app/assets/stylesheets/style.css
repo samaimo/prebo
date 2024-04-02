@@ -1,4 +1,26 @@
 
+
+/* メイン */
+.main {
+  background-color: rgb(234, 234, 234);
+  height: auto;
+  padding: 50px 20%;
+}
+
+.footer {
+  width: 100vw;
+  height: auto;
+  background-color: #FFFFFF;
+  display: flex;
+  justify-content: center;
+  margin: 40px;
+}
+
+.footer-logo {
+  height: 50px;
+  background-size: cover; /* 背景画像を領域に合わせて拡大縮小 */
+}
+
 /* ログイン情報・新規登録ボタン */
 .user-menu {
   list-style: none;
@@ -22,12 +44,7 @@
   align-self: flex-end;
 }
 
-/* メイン */
-.main {
-  background-color: rgb(251, 252, 255);
-  height: 100%;
-  padding: 50px 20%;
-}
+
 
 .post-wrapper {
   display: flex;
@@ -92,20 +109,11 @@ div.image_circle {
 hr {
   border: none;
   border-bottom: 1px solid #9e9e9e;
-  margin: 20px auto; /* 上下のマージンを20pxに設定し、左右のマージンを自動で調整 */
-  width: 95%;
+  margin: 20px auto; 上下のマージンを20pxに設定し、左右のマージンを自動で調整
+  width: auto;
   padding: 0 250px; /* パディング */
 }
 
-footter {
-  display: flex;
-  justify-content: center;
-}
-
-.fotter-logo {
-  height:500px;
-  background-size: cover; /* 背景画像を領域に合わせて拡大縮小 */
-}
 
 /* プレボ詳細ページ */
 .prebo-box {
@@ -122,13 +130,14 @@ footter {
   padding: 10px;
 }
 
+/* アイコン画像用 */
 .prof-image {
-  width: 150px;
-  height: 150px;
+  width: 200px;
+  height: 200px;
   border-radius: 50%;
-  /* background-image: url(images/藤井.png); */
   background-position: center;
-  background-size: cover; /* 背景画像を領域に合わせて拡大縮小 */
+  object-fit: cover;
+  border: solid #ff7b8d;
 }
 
 
@@ -147,9 +156,19 @@ p.box-memo {
 }
 
 
-a {
-  text-decoration: none;
+a:link,
+a:visited,
+a:hover,
+a:active {
+  color: inherit; /* リンクの色を継承する */
+  text-decoration: none; /* 下線をなくす */
 }
+
+li. {
+  list-style: none;
+}
+
+
 * {
   box-sizing: border-box;
 }

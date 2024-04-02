@@ -1,0 +1,100 @@
+/* 編集・削除ボタン */
+.ed-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #d2d2d2;
+  height: 40px;
+  width: 150px;
+  font-size: 14px;
+  border-radius: 5px;
+  color: #FFFFFF;
+  font-weight: bold;
+  padding: 10px;
+  margin-left: 10px;
+}
+
+.birth-age {
+  display: flex;
+
+}
+
+.age {
+  color: #7c7c7c;
+  margin-left: 10px;
+}
+
+/* prof-mainクラスにflex-direction: column;を追加 */
+.prof-main {
+  display: flex;
+  flex-direction: column;
+}
+
+/* 編集・削除ボタンのボックス */
+.prof-top {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  justify-content: flex-end; /* 右寄せに修正 */
+  margin-bottom: 20px; /* スペースを追加 */
+}
+
+
+.prof-box {
+  padding:  80px;
+  min-height: 100vh;
+  background-color: #FFFFFF;
+  display: flex;
+}
+
+.show-prof-wrap {
+  margin-left: 40px;
+
+}
+
+/* ボックス名称 */
+div.box-name {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  background-color: rgba(0, 255, 255, 0);
+}
+
+/* ボックス名称 */
+div.show-box-name {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  background-color: rgba(0, 255, 255, 0);
+  display: flex;
+}
+
+/* プロフィール本文 */
+.prof-text {
+  font-size: 14px;
+  line-height: 50px;
+}
+
+.profile {
+  display: flex;
+  width: 400px;
+}
+
+.left-prof {
+  background-color: rgba(127, 255, 212, 0);
+  width: 30%;
+  margin-right: 40px;
+
+}
+
+.right-prof {
+  background-color: rgba(0, 0, 255, 0);
+  width: auto;
+
+}
+
+.small-text {
+  font-size: 60%;
+  margin-left: 10px;
+  align-self: flex-end;
+}

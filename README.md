@@ -12,14 +12,15 @@
 - has_many :presents
 - has_one_attached :image
 
-## dearsテーブル
+## boxesテーブル
 
 | Column                 | Type             | Options                 |
 | ---------------------- | ---------------- | ----------------------- |
-| nickname               | string           | null:false              |
-| birth_day              | date             |                         |
+| name                   | string           | null:false              |
+| birthday               | date             |                         |
 | memo                   | text             |                         |
 | favorite_color         | string           |                         |
+| user                   | references       | null: false, foreign_key: true |
 
 ### Association
 - has_many :presents
@@ -39,5 +40,5 @@
 | url                    | text             |                         |
 
 ### Association
-- belongs_to :dear
+- belongs_to :box
 - has_one_attached :image

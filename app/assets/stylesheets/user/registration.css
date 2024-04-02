@@ -7,7 +7,6 @@
   justify-content: center;
 }
 
-/* form-wrapは商品購入画面でも使用しています */
 .form-wrap {
   width: 50%;
   background-color: white;
@@ -45,7 +44,7 @@
 }
 
 .form-text {
-  font-size: 14px;
+  font-size: 16px;
   font-weight: bold;
 }
 
@@ -157,4 +156,22 @@
   color: #0099e8;
   text-align: right;
   cursor: pointer;
+}
+
+
+/* 必須表示 */
+.required {
+  color: #ffffff;
+  background-color: rgb(247, 24, 68);
+  border-radius: 10%;
+  height: 50px;
+  width: 50px;
+  padding: 5px;
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+  text-align: center;
+  font-size: 13px;
+  font-weight: bold;
+  margin-left: 10px;
 }

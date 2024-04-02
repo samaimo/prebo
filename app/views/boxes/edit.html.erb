@@ -1,0 +1,37 @@
+<!-- ヘッダー -->
+<%= render 'header' %>
+
+<!-- メイン -->
+<div class="main">
+      <!-- 編集と削除ボタン -->
+      <div class="prof-top">
+        <div class="ed-button">
+          <%= link_to edit_box_path(@box.id) do %>
+            Preboを編集
+          <% end %>
+        </div>
+        <div class="ed-button">
+          <%= link_to "削除する", box_path(@box), data: { turbo_method: :delete }, class: "box-destroy" %>
+        </div>
+      </div>
+  <div class="prof-main">
+    <!-- プロフボックス -->
+    <div class="edit-prof-box">
+      <!-- 編集内容一覧 -->
+  <div class="form-edit-wrapper">
+    <%= form_with(model: @box, local: true, multipart: true) do |f| %>
+      <%= render partial: 'edit_form', locals: { f: f } %>
+
+    <% end %>
+  </div>
+
+
+ 
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--フッター-->
+<%= render 'shared/footer' %>
