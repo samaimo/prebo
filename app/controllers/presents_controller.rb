@@ -17,11 +17,11 @@ class PresentsController < ApplicationController
       render :new, status: :unprocessable_entity
     end
   end
-  
 
   private
+
   def present_params
     params.require(:present).permit(:title, :event_name, :text, :price, :memo, :present_name,
-                                 :url,:box_id, :image).merge(user_id: current_user.id)
+                                    :url, :box_id, :image).merge(user_id: current_user.id)
   end
 end
