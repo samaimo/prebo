@@ -1,6 +1,6 @@
 <%= render partial: "shared/second-header" %>
 
-<%= form_with model: @box, url: boxes_path, class: 'registration-main', local: true do |f| %>
+<%= form_with model: @box, url: boxes_path, class: 'registration-main', id:"new_post"  do |f| %>
 <div class='form-wrap'>
   <div class='form-header'>
     <h1 class='form-header-text'>
@@ -25,11 +25,14 @@
         プロフィール画像
         <span class="required">必須</span>
       </div>
+      <!--画像プレビューの表示-->
+      <div id="previews" class="preview-present"></div>
+
       <div class="click-upload">
         <p>
           クリックしてファイルをアップロード
         </p>
-        <%= f.file_field :image, id:"box-image" %>
+        <%= f.file_field :image %>
       </div>
       
     </div>

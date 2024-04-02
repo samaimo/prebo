@@ -7,7 +7,7 @@ class CreatePresents < ActiveRecord::Migration[7.0]
       t.string      :shop
       t.integer     :price
       t.text        :memo
-      t.text        :url
+      t.string      :url
       t.integer     :box_id,       null:false
       t.integer     :user_id,     null:false
       t.timestamps

@@ -24,6 +24,10 @@
 </div>
   <hr>
   <!--投稿一覧-->
+  <% @presents.each do |present| %>
+    <%= image_tag present.image, class:"post-image" %>
+
+  <% end %>
 
 
   <!--投稿ボタン-->

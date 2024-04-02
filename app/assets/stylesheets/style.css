@@ -60,12 +60,14 @@
   position: relative;
 }
 
+/* プレゼント一覧の投稿画像 */
 .post-image {
   height: 250px;
   width: 250px;
   border-radius: 5px;
   box-shadow: 2px 2px 5px #616161;
   object-fit: cover;
+  background-color: #ffffff;
 
 }
 

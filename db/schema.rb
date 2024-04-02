@@ -63,7 +63,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_04_02_002705) do
     t.string "shop"
     t.integer "price"
     t.text "memo"
-    t.text "url"
+    t.string "url"
     t.integer "box_id", null: false
     t.integer "user_id", null: false
     t.datetime "created_at", null: false

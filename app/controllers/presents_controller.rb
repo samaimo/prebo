@@ -1,6 +1,7 @@
 class PresentsController < ApplicationController
   def index
     @boxes = Box.all
+    @presents = Present.all
   end
 
   def new
