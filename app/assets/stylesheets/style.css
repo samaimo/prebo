@@ -2,7 +2,7 @@
 
 /* メイン */
 .main {
-  background-color: rgb(255, 229, 249);
+  background-color: rgb(234, 234, 234);
   height: auto;
   padding: 50px 20%;
 }
@@ -136,7 +136,8 @@ hr {
   height: 200px;
   border-radius: 50%;
   background-position: center;
-  background-size: cover; /* 背景画像を領域に合わせて拡大縮小 */
+  object-fit: cover;
+  border: solid #ff7b8d;
 }
 
 
