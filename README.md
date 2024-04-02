@@ -31,9 +31,10 @@
 
 | Column                 | Type             | Options                 |
 | ---------------------- | ---------------- | ----------------------- |
-| name                   | string           | null:false              |
+| title                  | string           | null:false              |
 | event_name             | text             | null:false              |
 | text                   | text             | null:false              |
+| present_name           | string           | null:false              |
 | price                  | integer          |                         |
 | shop_name              | string           |                         |
 | memo                   | text             |                         |

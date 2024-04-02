@@ -18,9 +18,11 @@ function calculateAgeAndMonths(birthDate) {
 
 // DOMContentLoaded イベントが発生した際に実行される処理
 window.addEventListener('click', function() {
-  console.log("count_age.jsが読み込まれました")
   // 生年月日のテキストを取得
   const birthDateElement = document.getElementById('birth-date');
+
+  // 要素が存在しなければ処理を終了
+  if (!birthDateElement) return;
 
   // 生年月日のテキストを取得
   let birthDateText = birthDateElement.textContent.trim();
@@ -36,6 +38,10 @@ window.addEventListener('click', function() {
 
   // 年齢と月齢を表示する要素を取得
   const ageAndMonthsElement = document.getElementById('age-and-months');
+
+  // 要素が存在しなければ処理を終了
+  if (!ageAndMonthsElement) return;
+  
   
   // 年齢と月齢を表示する要素に計算結果を設定
   ageAndMonthsElement.textContent = '( ' + age + '歳 ' + months + 'ヶ月 )';

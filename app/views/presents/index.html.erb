@@ -1,5 +1,5 @@
 <!--   ヘッダー引用    -->
-<%= render 'header' %>
+<%= render 'shared/header' %>
 
 
 <div class="main">
@@ -9,8 +9,7 @@
   <% @boxes.each do |box| %>
     <div class="box-info">
       <%= link_to box_path(box.id) do %>
-        <div class="image_circle" style="background-image: url(<%= url_for(box.image) %>);">
-        </div>
+        <div class="image_circle" style="background-image: url(<%= url_for(box.image) %>);"></div>
         <p class="box-name">
           <%= box.box_name %>
         </p>
@@ -22,16 +21,17 @@
   <%= link_to new_box_path do %>
     <%= image_tag "add_box.png", class: "add-box-button" %> 
   <% end %>
-    
-
-  </div>
+</div>
   <hr>
-<%= render 'post',hoge: @hoge %>
+  <!--投稿一覧-->
 
-<a class="purchase-btn" href="/boxes/new">
-  <span class="purchase-btn-text">キロク</span>
-  <span class="purchase-btn-text-small">する</span>
-  <%= image_tag "shiro.png", class:"purchase-btn-icon" %>
-</a>
 
+  <!--投稿ボタン-->
+  <a class="purchase-btn" href="/presents/new">
+    <span class="purchase-btn-text">キロク</span>
+    <span class="purchase-btn-text-small">する</span>
+    <%= image_tag "shiro.png", class:"purchase-btn-icon" %>
+  </a>
+
+<%= render 'shared/footer' %>
 
