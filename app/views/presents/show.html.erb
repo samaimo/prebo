@@ -4,6 +4,18 @@
 
    <!--メイン-->
     <div class="main">
+      <ul class="e-d-button">
+        <li>
+          <%= link_to edit_present_path(@present.id) do %>
+            編集する
+          <% end %>
+        </li>
+        <li>
+          <%= link_to present_path(@present.id), data: {turbo_method: :delete}, class:"box-destroy" do %>
+            削除する
+          <% end %>
+        </li>
+      </ul>
       <hr>
       <div class="box001">
         <%= link_to box_path(@box.id) do %>
