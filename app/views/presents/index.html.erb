@@ -26,9 +26,11 @@
   <!--投稿一覧-->
   <div class="post-index">
     <% @presents.each do |present| %>
-      <div class="post-image-wrap">
-        <%= image_tag present.image, class:"post-image" %>
-      </div>
+      <%= link_to present_path(present) do %>
+        <div class="post-image-wrap">
+          <%= image_tag present.image, class:"post-image" %>
+        </div>
+      <% end %>
     <% end %>
   </div>
   <!--投稿ボタン-->
