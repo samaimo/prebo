@@ -3,9 +3,15 @@
 
 
 <div class="main">
+    <!--ボックス追加ボタン-->
+    <div class="add-box-wrap">
+      <%= link_to new_box_path do %>
+        <%= image_tag "add_box.png", class: "add-box-button" %> 
+      <% end %>
+    </div>
   <!-- プレゼントボックスの表示 -->
   <div class="box">
-      <!-- ボックス一覧表示 -->
+    <!-- ボックス一覧表示 -->
     <% @boxes.each do |box| %>
       <div class="box-info">
         <%= link_to box_path(box.id) do %>
@@ -16,12 +22,7 @@
         <% end %>
       </div>
     <% end %>
-    <!--ボックス追加ボタン-->
-    <%= link_to new_box_path do %>
-      <%= image_tag "add_box.png", class: "add-box-button" %> 
-    <% end %>
   </div>
-  <hr>
   <!--投稿一覧-->
   <div class="post-index">
     <% @presents.each do |present| %>

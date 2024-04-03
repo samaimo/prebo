@@ -44,10 +44,17 @@
   height: 500px;
 }
 
+/* ボックス追加ボタン */
 .add-box-button {
-  width: 40px;
-  height: 40px;
+  width: 50px;
+  height: 50px;
   align-self: flex-end;
+  margin: 0 10 10px;
+}
+
+.add-box-wrap {
+  display: flex;
+  justify-content: right;
 }
 
 
@@ -70,14 +77,16 @@
 .post-index {
   margin: 40px auto;
   display: flex;
+  flex-wrap: wrap;
+
 }
 
 .post-image-wrap {
-  margin: 0 10px;
   height: 150px;
   width: 150px;
   border-radius: 5px;
   box-shadow: 2px 2px 5px #616161;
+  margin: 5px;
 }
 
 .post-image {
@@ -104,9 +113,34 @@
   color:#ffffff;
 }
 
-div.box {
+/* ボックスの表示 */
+.box {
   display: flex;
   margin-bottom: 40px;
+  overflow-x: auto; 
+  overflow-y: hidden; 
+  white-space: nowrap; 
+  padding-bottom: 30px;
+}
+
+/* スクロールバーをデフォルトでは透明にする */
+.box::-webkit-scrollbar {
+  height: 4px;
+}
+
+.box::-webkit-scrollbar-thumb {
+  background: transparent; /* ツマミの色を透明にする */
+}
+
+/* ホバー時にスクロールバーを表示する */
+.box:hover::-webkit-scrollbar-thumb {
+  background: #ffb9e9; /* ツマミの色を指定する */
+  border-radius: 7px; 
+}
+
+.box::-webkit-scrollbar-track {
+  background: #ffd6ee; 
+  border-radius: 7px; 
 }
 
 div.box-info {
@@ -117,6 +151,7 @@ div.box-info {
   height: 100px;
   width: 90px;
   margin-right: 20px;
+  scrollbar-width: none;
 }
 
 p.box-name {
