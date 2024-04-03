@@ -18,6 +18,12 @@ class PresentsController < ApplicationController
     end
   end
 
+  def show
+    @boxes = Box.all
+    @box = Box.find(params[:id])
+    @present = Present.find(params[:id])
+  end
+
   private
 
   def present_params

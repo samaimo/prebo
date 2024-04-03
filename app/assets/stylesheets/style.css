@@ -158,10 +158,11 @@ hr {
 }
 
 /* アイコン画像用 */
-.prof-image {
-  width: 30%;
-  height: 30%;
+.prof-image { 
+  width: 150px;
+  height: 150px;
   border-radius: 50%;
+  background-size: cover;
   background-position: center;
   object-fit: cover;
   border: solid #ff7b8d;
@@ -269,7 +270,7 @@ li. {
 
 .box19 {
   position: relative;
-  padding:0.25em 1em;
+  padding:2.25em 1em;
 }
 .box19:before,.box19:after{ 
   content:'';
@@ -304,16 +305,18 @@ li. {
 
 .box001 {
   display: flex;
+  align-items: center;
+  height: 95px;
 }
 
 .text001-box-wrapper {
   width: 100%;
-  padding: 10px;
+  padding: 0 5%;
 }
 
 .text001-box {
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   background-color: #ffffff;
   height: 30px;
 }
@@ -342,6 +345,15 @@ li. {
   border-radius: 5px;
   background-position: center;
   background-size: cover;
+  object-fit: cover;
+}
+
+.null {
+  color:#ff7b8d;
+}
+
+h4.show-present-name {
+  margin-left: 10px;
 }
 
 /* ここまで */
