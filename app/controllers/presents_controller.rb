@@ -1,9 +1,9 @@
 class PresentsController < ApplicationController
-  before_action :set_present, only:[:show,:edit]
+  before_action :set_present, only: [:show, :edit]
 
   def index
-    @boxes = Box.all.order("created_at DESC")
-    @presents = Present.all.order("created_at DESC")
+    @boxes = Box.all.order('created_at DESC')
+    @presents = Present.all.order('created_at DESC')
   end
 
   def new
@@ -26,6 +26,20 @@ class PresentsController < ApplicationController
   def edit
   end
 
+  def update
+    if @present.update(present_params)
+      redirect_to edit_present_path
+    else
+      render :edit, status: :unprocessable_entity
+    end
+  end
+
+  def destroy
+    @present = Present.find(params[:id])
+    @present.destroy if @present.user == current_user
+    redirect_to root_path
+  end
+
   private
 
   def set_present
@@ -33,7 +47,6 @@ class PresentsController < ApplicationController
     @box = Box.find(params[:id])
     @present = Present.find(params[:id])
   end
-
 
   def present_params
     params.require(:present).permit(:title, :event_name, :text, :price, :memo, :present_name,

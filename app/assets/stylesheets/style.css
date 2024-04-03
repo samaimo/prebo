@@ -391,4 +391,11 @@ h4.show-present-name {
   margin-left: 10px;
 }
 
-/* ここまで */
+/* プレゼント詳細表示 */
+ul.e-d-button {
+  width: 100px;
+  height: 20px;
+  display: flex;
+
+  background: #ff2f93;
+}
