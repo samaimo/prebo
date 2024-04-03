@@ -1,7 +1,7 @@
 class PresentsController < ApplicationController
   def index
-    @boxes = Box.all
-    @presents = Present.all
+    @boxes = Box.all.order("created_at DESC")
+    @presents = Present.all.order("created_at DESC")
   end
 
   def new
