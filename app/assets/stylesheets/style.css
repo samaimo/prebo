@@ -1,19 +1,25 @@
 
+.header, .footer, .second-header, .registration-main, .second-footer {
+  background-color: #ffffff;
+}
+
+.prof-box {
+  box-shadow: 2px 2px 5px #616161;
+}
 
 /* メイン */
 .main {
-  background-color: rgb(234, 234, 234);
-  height: auto;
-  padding: 50px 20%;
+  background-color: rgb(255, 255, 255);
+  height: 100vh;
+  padding: 50px 25%;
 }
 
 .footer {
-  width: 100vw;
-  height: auto;
-  background-color: #FFFFFF;
+  width: 100%;
+  height: 100px;
   display: flex;
+  align-items: center;
   justify-content: center;
-  margin: 40px;
 }
 
 .footer-logo {
@@ -61,9 +67,14 @@
 }
 
 /* プレゼント一覧の投稿画像 */
+.post-index {
+  margin: 40px auto;
+}
+
 .post-image {
-  height: 250px;
-  width: 250px;
+  margin: 0 10px;
+  height: 150px;
+  width: 150px;
   border-radius: 5px;
   box-shadow: 2px 2px 5px #616161;
   object-fit: cover;
@@ -81,7 +92,7 @@
 
 div.box {
   display: flex;
-  margin-bottom: 100px;
+  margin-bottom: 40px;
 }
 
 div.box-info {

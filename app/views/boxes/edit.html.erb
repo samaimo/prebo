@@ -2,7 +2,7 @@
 <%= render 'shared/header' %>
 
 <!-- メイン -->
-<div class="main">
+<div class="edit_main">
   <!-- 編集と削除ボタン -->
   <div class="prof-top">
     <div class="ed-button">
@@ -18,15 +18,10 @@
     <!-- プロフボックス -->
     <div class="edit-prof-box">
       <!-- 編集内容一覧 -->
-  <div class="form-edit-wrapper">
-    <%= form_with(model: @box, local: true, multipart: true) do |f| %>
-      <%= render partial: 'edit_form', locals: { f: f } %>
-    <% end %>
-  </div>
-
-
- 
-        </div>
+      <div class="form-edit-wrapper">
+        <%= form_with(model: @box, local: true, multipart: true) do |f| %>
+          <%= render partial: 'edit_form', locals: { f: f } %>
+        <% end %>
       </div>
     </div>
   </div>

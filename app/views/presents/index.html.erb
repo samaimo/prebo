@@ -5,37 +5,36 @@
 <div class="main">
   <!-- プレゼントボックスの表示 -->
   <div class="box">
-    <!-- ボックス１ -->
-  <% @boxes.each do |box| %>
-    <div class="box-info">
-      <%= link_to box_path(box.id) do %>
-        <div class="image_circle" style="background-image: url(<%= url_for(box.image) %>);"></div>
-        <p class="box-name">
-          <%= box.box_name %>
-        </p>
-      <% end %>
-    </div>
-  <% end %>
-
-  <!--ボックス追加ボタン-->
-  <%= link_to new_box_path do %>
-    <%= image_tag "add_box.png", class: "add-box-button" %> 
-  <% end %>
-</div>
+      <!-- ボックス一覧表示 -->
+    <% @boxes.each do |box| %>
+      <div class="box-info">
+        <%= link_to box_path(box.id) do %>
+          <div class="image_circle" style="background-image: url(<%= url_for(box.image) %>);"></div>
+          <p class="box-name">
+            <%= box.box_name %>
+          </p>
+        <% end %>
+      </div>
+    <% end %>
+    <!--ボックス追加ボタン-->
+    <%= link_to new_box_path do %>
+      <%= image_tag "add_box.png", class: "add-box-button" %> 
+    <% end %>
+  </div>
   <hr>
   <!--投稿一覧-->
-  <% @presents.each do |present| %>
-    <%= image_tag present.image, class:"post-image" %>
-
-  <% end %>
-
-
+  <div class="post-index">
+    <% @presents.each do |present| %>
+      <%= image_tag present.image, class:"post-image" %>
+    <% end %>
+  </div>
   <!--投稿ボタン-->
   <a class="purchase-btn" href="/presents/new">
     <span class="purchase-btn-text">キロク</span>
     <span class="purchase-btn-text-small">する</span>
-    <%= image_tag "shiro.png", class:"purchase-btn-icon" %>
+    <%= image_tag "addpresent.png", class:"purchase-btn-icon" %>
   </a>
-
-<%= render 'shared/footer' %>
-
+</div>
+<div class="footer">
+  <%= image_tag "logo.png", class: "footer-logo" %>
+</div>
