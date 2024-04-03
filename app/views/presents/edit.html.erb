@@ -1,0 +1,98 @@
+<%= render partial: "shared/second-header" %>
+
+<%= form_with model: @present, url: edit_present_path, class: 'registration-main', id:"new_post", local: true do |f| %>
+<div class='form-wrap'>
+  <div class='form-header'>
+    <h1 class='form-header-text'>
+      プレゼントを編集する
+    </h1>
+  </div>
+
+  <%#= render 'shared/error_messages', model: f.object %>
+
+  <div class="form-group">
+    <div class='form-text-wrap'>
+      <label class="form-text">プレゼントを贈りたい相手は誰ですか？</label>
+      <span class="required">必須</span>
+    </div>
+        <%= f.collection_select(:box_id, Box.all, :id, :box_name,{include_blank: true }, {class: 'form-control'}) %>
+  </div>
+
+  <div class="form-group">
+    <div class='form-text-wrap'>
+      <label class="form-text">贈り物のタイトル</label>
+      <span class="required">必須</span>
+    </div>
+    <%= f.text_area :title, class:"input-default", placeholder:"例) 20歳のお誕生日おめでとう！", maxlength:"40" %>
+  </div>
+
+
+    <%# プレゼント画像 %>
+    <div class="form-group">
+      <div class="form-text">
+        画像選択
+        <span class="required">必須</span>
+      </div>
+      <div id="previews" class="preview-present"></div>
+      <div class="click-upload">
+        <p>
+          クリックしてファイルをアップロード
+        </p>
+        <%= f.file_field :image %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class='form-text-wrap'>
+        <label class="form-text">プレゼント</label>
+        <span class="required">必須</span>
+      </div>
+      <%= f.text_area :present_name, class:"input-default", placeholder:"例) タラバガニ詰め合わせ" %>
+    </div>
+
+    <div class="form-group">
+      <div class='form-text-wrap'>
+        <label class="form-text">キャプション</label>
+      </div>
+      <%= f.text_area :text, class:"input-caption",
+       placeholder:"例) 未だかつてないほど新鮮な東北産タラバガニ。海産物が好きだと聞いたので選んでみました。" %>
+    </div>
+
+    <div class="form-group">
+      <div class='form-text-wrap'>
+        <label class="form-text">shop</label>
+      </div>
+      <%= f.text_area :shop, class:"input-default", placeholder:"例) shopname.here" %>
+    </div>
+
+    <div class="form-group">
+      <div class='form-text-wrap'>
+        <label class="form-text">shopURL</label>
+      </div>
+      <%= f.text_area :url, class:"input-caption", placeholder:"例) http:// " %>
+    </div>
+
+    <div class="form-group">
+      <div class='form-text-wrap'>
+        <label class="form-text">price</label>
+      </div>
+      <%= f.text_area :shop, class:"input-default", placeholder:"例) 10000" %>
+    </div>
+
+
+    <div class="form-group">
+      <div class='form-text-wrap'>
+        <label class="form-text">memo</label>
+      </div>
+      <%= f.text_area :memo, class:"input-caption", id:"memo", placeholder:"例) 築地のおじちゃんがいい人だった。 " %>
+    </div>
+
+
+  <div class='register-btn'>
+    <%= f.submit "変更する" ,class:"register-red-btn" %>
+  </div>
+</div>
+<% end %>
+
+<%= render "shared/footer"%>
+

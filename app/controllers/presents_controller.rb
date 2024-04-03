@@ -1,4 +1,6 @@
 class PresentsController < ApplicationController
+  before_action :set_present, only:[:show,:edit]
+
   def index
     @boxes = Box.all.order("created_at DESC")
     @presents = Present.all.order("created_at DESC")
@@ -19,12 +21,19 @@ class PresentsController < ApplicationController
   end
 
   def show
+  end
+
+  def edit
+  end
+
+  private
+
+  def set_present
     @boxes = Box.all
     @box = Box.find(params[:id])
     @present = Present.find(params[:id])
   end
 
-  private
 
   def present_params
     params.require(:present).permit(:title, :event_name, :text, :price, :memo, :present_name,
