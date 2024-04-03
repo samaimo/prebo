@@ -1,7 +1,7 @@
 class PresentsController < ApplicationController
   def index
-    @boxes = Box.all
-    @presents = Present.all
+    @boxes = Box.all.order("created_at DESC")
+    @presents = Present.all.order("created_at DESC")
   end
 
   def new
@@ -16,6 +16,12 @@ class PresentsController < ApplicationController
     else
       render :new, status: :unprocessable_entity
     end
+  end
+
+  def show
+    @boxes = Box.all
+    @box = Box.find(params[:id])
+    @present = Present.find(params[:id])
   end
 
   private
