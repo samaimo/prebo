@@ -25,7 +25,9 @@
   <!--投稿一覧-->
   <div class="post-index">
     <% @presents.each do |present| %>
-      <%= image_tag present.image, class:"post-image" %>
+      <div class="post-image-wrap">
+        <%= image_tag present.image, class:"post-image" %>
+      </div>
     <% end %>
   </div>
   <!--投稿ボタン-->
