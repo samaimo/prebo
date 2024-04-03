@@ -1,19 +1,25 @@
 
+.header, .footer, .second-header, .registration-main, .second-footer {
+  background-color: #ffffff;
+}
+
+.prof-box {
+  box-shadow: 2px 2px 5px #616161;
+}
 
 /* メイン */
 .main {
-  background-color: rgb(234, 234, 234);
-  height: auto;
-  padding: 50px 20%;
+  background-color: rgb(255, 255, 255);
+  height: 100vh;
+  padding: 50px 25%;
 }
 
 .footer {
-  width: 100vw;
-  height: auto;
-  background-color: #FFFFFF;
+  width: 100%;
+  height: 100px;
   display: flex;
+  align-items: center;
   justify-content: center;
-  margin: 40px;
 }
 
 .footer-logo {
@@ -60,13 +66,34 @@
   position: relative;
 }
 
-.post-image {
-  height: 250px;
-  width: 250px;
+/* プレゼント一覧の投稿画像 */
+.post-index {
+  margin: 40px auto;
+  display: flex;
+}
+
+.post-image-wrap {
+  margin: 0 10px;
+  height: 150px;
+  width: 150px;
   border-radius: 5px;
   box-shadow: 2px 2px 5px #616161;
-  object-fit: cover;
+}
 
+.post-image {
+  height: 150px;
+  width: 150px;
+  border-radius: 5px;
+  object-fit: cover;
+  background-color: #ffffff;
+  /* ぼかし */
+  transition: all 0.5s ease;
+  filter: blur(3px);
+}
+
+/* カーソルが触れた際にぼかしを無効化 */
+.post-image:hover {
+  filter: blur(0px);
 }
 
 .bottom-right-title {
@@ -79,7 +106,7 @@
 
 div.box {
   display: flex;
-  margin-bottom: 100px;
+  margin-bottom: 40px;
 }
 
 div.box-info {
@@ -108,7 +135,7 @@ div.image_circle {
 
 hr {
   border: none;
-  border-bottom: 1px solid #9e9e9e;
+  border-bottom: 1px solid #ede6eb;
   margin: 20px auto; 上下のマージンを20pxに設定し、左右のマージンを自動で調整
   width: auto;
   padding: 0 250px; /* パディング */
@@ -132,8 +159,8 @@ hr {
 
 /* アイコン画像用 */
 .prof-image {
-  width: 200px;
-  height: 200px;
+  width: 30%;
+  height: 30%;
   border-radius: 50%;
   background-position: center;
   object-fit: cover;
