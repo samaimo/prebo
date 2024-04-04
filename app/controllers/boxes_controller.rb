@@ -23,6 +23,7 @@ class BoxesController < ApplicationController
   end
 
   def edit
+    redirect_to root_path unless @box.user == current_user
   end
 
   def update

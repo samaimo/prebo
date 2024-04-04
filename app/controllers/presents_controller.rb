@@ -1,5 +1,5 @@
 class PresentsController < ApplicationController
-  before_action :set_present, only: [:show, :edit]
+  before_action :set_present, only: [:show, :edit, :update, :destroy]
 
   def index
     @boxes = Box.all.order('created_at DESC')
@@ -24,18 +24,20 @@ class PresentsController < ApplicationController
   end
 
   def edit
+    return if @present.user == current_user
+
+    redirect_to root_path
   end
 
   def update
     if @present.update(present_params)
-      redirect_to edit_present_path
+      redirect_to present_path
     else
       render :edit, status: :unprocessable_entity
     end
   end
 
   def destroy
-    @present = Present.find(params[:id])
     @present.destroy if @present.user == current_user
     redirect_to root_path
   end
@@ -43,13 +45,13 @@ class PresentsController < ApplicationController
   private
 
   def set_present
-    @boxes = Box.all
-    @box = Box.find(params[:id])
     @present = Present.find(params[:id])
+    @boxes = Box.all
+    @box = Box.find(@present.box_id)
   end
 
   def present_params
-    params.require(:present).permit(:title, :event_name, :text, :price, :memo, :present_name,
+    params.require(:present).permit(:title, :event_name, :text, :price, :memo, :present_name, :shop,
                                     :url, :box_id, :image).merge(user_id: current_user.id)
   end
 end

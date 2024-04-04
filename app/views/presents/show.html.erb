@@ -1,87 +1,79 @@
+<!--   ヘッダー    -->
+<%= render 'shared/header' %>
 
-  <!--   ヘッダー    -->
-  <%= render 'shared/header' %>
-
-   <!--メイン-->
-    <div class="main">
-      <ul class="e-d-button">
-        <li>
-          <%= link_to edit_present_path(@present.id) do %>
-            編集する
-          <% end %>
-        </li>
-        <li>
-          <%= link_to present_path(@present.id), data: {turbo_method: :delete}, class:"box-destroy" do %>
-            削除する
-          <% end %>
-        </li>
-      </ul>
-      <hr>
-      <div class="box001">
-        <%= link_to box_path(@box.id) do %>
-          <%= image_tag @box.image , class:"image_box001" %>
-        <% end %>
-        <div class="text001-box-wrapper">
-          <div class="text001-box">
-            <div class="type-name">
-              <%= @box.box_name %> さんへ
-            </div>
-            <div class="type-name">
-              <span class="point">⚫︎</span> 
-                <% if @box.occupation.present? %>
-                  <%= @box.occupation %>
-                <% else %>
-                  <span class="null">未登録</span>
-                <% end %>
-              </div>
-          </div>
-          <hr class="border">
-          <div class="present-title001">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right-fill" viewBox="0 0 16 16">
-              <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
-            </svg>
-            <h4 class="show-present-name">
-              <%= @present.present_name %>
-            </h4>
-          </div>
-
-        </div>
-      </div>
-      <div class="main-title">
-                <!-- ここから -->
-
-        <!-- ここまで -->
-        <!-- <div class="image_circle">
-          <img src="images/藤井.png" class="image_circle">
-        </div>
-        プレゼントのあれこれ
-        
-      </div> -->
-      <hr>
-      <div class="present-image-wrapper">
-          <%= image_tag @present.image, class:"present-image" %>
-        <div class="present-text">
-          <div class="box19">
-            <h2 class="present-title">
-              <%= @present.title %>
-            </h2>
-          </div>
-          <div class="event-memo">
-            <%= @present.memo %>
-          </div>
-        </div>
-      </div>
-      <ul class="">
-        <li class="">price   ¥ 100</li> 
-        <li class="">shop    ダイソー</li>
-        <li class="">memo</li>
-        <li class="">
-          <%= @present.url %>
-        </li>
-      </ul>
-
+<!--メイン-->
+<div class="main">
+  <!--編集ボタン-->
+  <div class="e-d-button" style="
+      display: flex;
+      justify-content: right;">
+    <div class="ed-button">
+      <%= link_to edit_present_path(@present.id) do %>
+        編集する
+      <% end %>
     </div>
+    <div class="ed-button">
+      <%= link_to present_path(@present.id), data: {turbo_method: :delete} do %>
+        削除する
+      <% end %>
+    </div>
+  </div>
 
+
+  <hr>
+  <div class="box001">
+    <%= link_to box_path(@box.id) do %>
+      <%= image_tag @box.image , class:"image_box001" %>
+    <% end %>
+    <div class="text001-box-wrapper">
+      <div class="text001-box">
+        <div class="type-name">
+          <%= @box.box_name %> さんへ
+        </div>
+        <div class="type-name">
+          <span class="point">⚫︎</span> 
+          <% if @box.occupation.present? %>
+            <%= @box.occupation %>
+          <% else %>
+            <span class="null">未登録</span>
+          <% end %>
+        </div>
+      </div>
+      <hr class="border">
+      <div class="present-title001">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right-fill" viewBox="0 0 16 16">
+          <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
+        </svg>
+        <h4 class="show-present-name">
+          <%= @present.present_name %>
+        </h4>
+      </div>
+    </div>
+  </div>
+  <div class="main-title">
+  <hr>
+  <div class="present-image-wrapper">
+    <%= image_tag @present.image, class:"present-image" %>
+    <div class="present-text">
+      <div class="box19">
+        <h2 class="present-title">
+          <%= @present.title %>
+        </h2>
+      </div>
+      <div class="event-memo">
+        <%= @present.text %>
+      </div>
+    </div>
+  </div>
+  <ul class="additional-info">
+    <li class="">shop    <%= @present.shop %></li>
+    <li class="">price   ¥<%= @present.price %></li> 
+    <li class="">memo</li>
+    <li class="">
+      <%= @present.url %>
+    </li>
+  </ul>
+</div>
 
 <!--フッター-->
-  <%= render 'shared/footer' %>
+<%= render 'shared/footer' %>

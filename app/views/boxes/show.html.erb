@@ -41,19 +41,39 @@
             <!--右サイド　入力した項目の表示-->
             <div class="right-prof">
               <ul class="prof-text">
-                <% if @box.birth_day.present? %>
-                  <li id="birth-date" class="birth-age"><%= @box.birth_day.strftime("%Y年 %-m月 %-d日") %>
-                      <!-- 年齢と月齢の表示 -->
-                      <p id="age-and-months" class="age">(年齢を表示する)</p>
-                  </li>
-                <% end %>
-                <li><%= @box.anniversary_day.strftime("%Y年 %-m月 %-d日") if @box.anniversary_day.present? %></li>
-                <li><%= @box.anniversary_memo if @box.anniversary_memo? %></li>
-                <li><%= @box.occupation if @box.occupation.present? %></li>
-                <li><%= @box.hobbies if @box.hobbies.present? %></li>
-                <li><%= @box.likes if @box.likes.present? %></li>
-                <li><%= @box.dislikes if @box.dislikes.present? %></li>
+                <li id="birth-date" class="birth-age">
+                  <% if @box.birth_day.present? %>
+                    <%= @box.birth_day.strftime("%Y年 %-m月 %-d日") %>
+                  <% else %>
+                    未設定です
+                  <% end %>
+                  <!-- 年齢と月齢の表示 -->
+                  <p id="age-and-months" class="age">(年齢を表示する)</p>
+                </li>
+                <li>
+                  <% if @box.anniversary_day.present? %>
+                    <%= @box.anniversary_day.strftime("%Y年 %-m月 %-d日") %>
+                  <% else %>
+                    <span class="unset">未設定です</span>
+                  <% end %>
+                </li>
+                <li>
+                  <%= @box.anniversary_memo.presence || "未設定です" %>
+                </li>
+                <li>
+                  <%= @box.occupation.presence || "未設定です" %>
+                </li>
+                <li>
+                  <%= @box.hobbies.presence || "未設定です" %>
+                </li>
+                <li>
+                  <%= @box.likes.presence || "未設定です" %>
+                </li>
+                <li>
+                  <%= @box.dislikes.presence || "未設定です" %>
+                </li>
               </ul>
+
           </div>
         </div>   
       </div>
